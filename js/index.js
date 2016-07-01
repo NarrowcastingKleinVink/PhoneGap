@@ -1,3 +1,9 @@
+function resizeFrame(){
+    $("#narrowcasting_frame").height(
+        $(window).height() + 3
+    );
+}
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -47,10 +53,11 @@ var app = {
         console.log('Received Event: ' + id);
 
         $('body').append(
-            '<iframe src="http://narrowcasting.dielissen.eu/slideshow/713ed7b760-b0b8fcaa6d-24eb26085b-7db95d0666" id="narrowcasting_frame" />'
+            '<iframe src="http://narrowcasting.dielissen.eu/" id="narrowcasting_frame" />'
         );
-        $("#narrowcasting_frame").height(
-            $(window).height() + 3
-        );
+        resizeFrame();
+        $(window).resize(function(){
+            resizeFrame();
+        });
     }
 };
