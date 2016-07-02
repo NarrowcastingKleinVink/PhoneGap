@@ -53,7 +53,7 @@ var app = {
         console.log('Received Event: ' + id);
 
         $('body').append(
-            '<iframe src="http://narrowcasting.dielissen.eu/" id="narrowcasting_frame" />'
+            '<iframe src="http://192.168.0.100/" id="narrowcasting_frame" />'
         );
         resizeFrame();
         $(window).resize(function(){
